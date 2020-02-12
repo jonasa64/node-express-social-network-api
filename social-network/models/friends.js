@@ -7,3 +7,4 @@ const friendSchema = new Schema({
 
 const friend = mongoose.model('friend', friendSchema);
 
+module.exports = friend;

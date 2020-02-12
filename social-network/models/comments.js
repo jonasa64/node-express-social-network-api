@@ -8,3 +8,5 @@ const commentSchema = new Schema({
 
 
 const  comment = mongoose.model('comment', commentSchema);
+
+module.exports = comment;

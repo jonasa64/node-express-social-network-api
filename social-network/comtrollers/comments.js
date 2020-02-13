@@ -2,10 +2,15 @@ const comment = require('../models/comments');
 exports.add = (req, res) => {
     try {
         const newComment = comment({
-
+            text : req.body.text,
+            author: {
+              
+               id: req.body.id
+             
+            }
         });
         newComment.save();
-        res.send(newComment);
+        res.send("comment is added");
     }catch (error) {
         res.send('error tyring to add your comment');
     }

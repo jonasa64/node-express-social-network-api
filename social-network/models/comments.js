@@ -3,7 +3,12 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
    text : String,
-    author : String
+    author : {
+        id :{
+            type : Schema.Types.ObjectId,
+            ref : "user"
+        }
+    }
 });
 
 

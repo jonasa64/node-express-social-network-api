@@ -4,8 +4,20 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
     title : String,
     body : String,
-    author: String,
-    image : String
+    author: {
+        id : {
+            type : Schema.Types.ObjectId,
+            ref : "user"
+        }
+    },
+    image : String,
+    comments : [
+       {
+            type : Schema.Types.ObjectId,
+            ref: "comment"
+        }
+    ]
+
 });
 
 const post = mongoose.model('Post', postSchema);
